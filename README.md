@@ -12,6 +12,7 @@
 > This Project hasn't any stable release to Install yet
 
 ## Contributing
+Thank you for considering contributing to the Sakoo framework! You can read our contribution guidelines [Here](.github/CONTRIBUTION.md)
 
 ## Security Vulnerabilities
 If you discover a security vulnerability within Sakoo, please send an email to **Pouya Asgharnejad Tehran** at [pouyaaofficial@gmail.com](mailto:pouyaaofficial@gmail.com).
