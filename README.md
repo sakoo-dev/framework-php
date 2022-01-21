@@ -18,3 +18,4 @@ If you discover a security vulnerability within Sakoo, please send an email to *
 All security vulnerabilities will be promptly addressed.
 
 ## License
+The **Sakoo PHP Framework** is open-source software licensed under the [MIT License](LICENSE.md).
