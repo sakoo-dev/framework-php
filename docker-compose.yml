@@ -17,7 +17,7 @@ services:
       - localnetwork
     healthcheck:
       test: ["CMD", "mysqladmin", "ping"]
-  sakoo-app:
+  sakoo.app:
     build:
       context: .
       dockerfile: docker/sakoo.app/Dockerfile
@@ -42,7 +42,7 @@ services:
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
       - ./docker/nginx/logs/:/var/log/nginx/
     depends_on:
-      - sakoo-app
+      - sakoo.app
     networks:
       - localnetwork
     healthcheck:

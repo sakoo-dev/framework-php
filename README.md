@@ -6,10 +6,26 @@
 > This Project is **Under Construction**
 
 ## Requirements
-- PHP >= 8.1
+Sakoo Just needed _Docker_ Platform to Run.
+Make sure [___Docker___ and ___Docker Compose___](https://docker.com) are installed on your system.
+___Windows users___ could use the _Windows Subsystem for Linux (WSL-2)_ to Run the Project on _Docker Desktop_.
+See [Windows WSL-2 Installation Guide.](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 ## Installation
-> This Project hasn't any stable release to Install yet
+
+Run the following commands: 
+```bash
+make init
+make up
+```
+Sakoo uses a ___Docker Proxy___ Program, and it gives you ability to interact with your favorite tools, Easily.
+For Example:
+```bash
+./sakoo php <your command>
+./sakoo composer <your command>
+./sakoo npm <your command>
+./sakoo test
+```
 
 ## Contributing
 Thank you for considering contributing to the Sakoo framework! You can read our contribution guidelines [Here](.github/CONTRIBUTION.md)
