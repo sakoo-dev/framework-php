@@ -13,10 +13,15 @@ See [Windows WSL-2 Installation Guide.](https://docs.microsoft.com/en-us/windows
 
 ## Installation
 
-Run the following commands: 
+Run the following command to initialize the Project: 
 ```bash
 make init
-make up
+```
+Once after the Project initialization, you can use following commands:
+```bash
+make up     # equals to docker-compose up -d
+make down   # equals to docker-compose down
+make rm     # removes the container's persist data
 ```
 Sakoo uses a ___Docker Proxy___ Program, and it gives you ability to interact with your favorite tools, Easily.
 For Example:

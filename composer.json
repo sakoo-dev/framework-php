@@ -1,0 +1,18 @@
+{
+    "name": "sakoo/framework",
+    "description": "The Sakoo PHP Web Framework",
+    "type": "project",
+    "license": "MIT",
+    "keywords": [
+      "framework",
+      "sakoo"
+    ],
+    "authors": [
+        {
+            "name": "Pouya Asgharnejad Tehran",
+            "email": "pouyaaofficial@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
