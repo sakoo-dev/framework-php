@@ -2,6 +2,7 @@
     "name": "sakoo/framework",
     "description": "The Sakoo PHP Web Framework",
     "type": "project",
+    "version": "1.0.0",
     "license": "MIT",
     "keywords": [
       "framework",
@@ -14,5 +15,11 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.5"
+    },
+    "scripts": {
+      "stylecheck": "./vendor/bin/php-cs-fixer fix --dry-run"
+    }
 }

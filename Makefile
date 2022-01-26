@@ -12,3 +12,6 @@ down:
 
 rm:
 	@./sakoo down -v --remove-orphans
+
+stylefix:
+	@./sakoo php ./vendor/bin/php-cs-fixer fix
