@@ -14,12 +14,25 @@
             "email": "pouyaaofficial@gmail.com"
         }
     ],
+    "autoload": {
+      "psr-4": {
+        "Core\\": "core/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Core\\Tests\\": "core/tests"
+      }
+    },
     "minimum-stability": "stable",
     "require": {},
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.5"
+        "friendsofphp/php-cs-fixer": "^3.5",
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.5"
     },
     "scripts": {
-      "stylecheck": "./vendor/bin/php-cs-fixer fix --dry-run"
+      "stylecheck": "./vendor/bin/php-cs-fixer fix --dry-run",
+      "test": "./vendor/bin/phpunit"
     }
 }

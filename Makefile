@@ -15,3 +15,6 @@ rm:
 
 stylefix:
 	@./sakoo php ./vendor/bin/php-cs-fixer fix
+
+test:
+	@./sakoo test
