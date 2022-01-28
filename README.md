@@ -14,6 +14,9 @@
 ## Contributing
 Thank you for considering contributing to the Sakoo framework! You can read our contribution guidelines [Here](.github/CONTRIBUTION.md)
 
+## Code of Conduct
+In order to ensure that the Sakoo community is welcoming to all, please review and abide by the [Code of Conduct](.github/CODE_OF_CONDUCT.md)
+
 ## Security Vulnerabilities
 If you discover a security vulnerability within Sakoo, please send an email to **Pouya Asgharnejad Tehran** at [pouyaaofficial@gmail.com](mailto:pouyaaofficial@gmail.com).
 All security vulnerabilities will be promptly addressed.
