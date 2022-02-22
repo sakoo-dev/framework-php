@@ -2,27 +2,24 @@
     "name": "sakoo/framework",
     "description": "The Sakoo PHP Web Framework",
     "type": "project",
-    "version": "1.0.0",
     "license": "MIT",
-    "keywords": [
-      "framework",
-      "sakoo"
-    ],
+    "keywords": ["framework", "sakoo"],
     "authors": [
         {
             "name": "Pouya Asgharnejad Tehran",
-            "email": "pouyaaofficial@gmail.com"
+            "email": "pouyaaofficial@gmail.com",
+            "role": "Software Engineer"
         }
     ],
     "autoload": {
-      "psr-4": {
-        "Core\\": "core/"
-      }
+        "psr-4": {
+            "Core\\": "core/"
+        }
     },
     "autoload-dev": {
-      "psr-4": {
-        "Core\\Tests\\": "core/tests"
-      }
+        "psr-4": {
+            "Core\\Tests\\": "core/tests"
+        }
     },
     "minimum-stability": "stable",
     "require": {},
@@ -32,7 +29,7 @@
         "mockery/mockery": "^1.5"
     },
     "scripts": {
-      "stylecheck": "./vendor/bin/php-cs-fixer fix --dry-run",
-      "test": "./vendor/bin/phpunit"
+        "stylecheck": "./vendor/bin/php-cs-fixer fix --dry-run",
+        "test": "./vendor/bin/phpunit"
     }
 }

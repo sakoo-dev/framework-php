@@ -18,3 +18,6 @@ stylefix:
 
 test:
 	@./sakoo test
+
+fresh:
+	@./sakoo composer dump-autoload
