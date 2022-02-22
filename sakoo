@@ -50,6 +50,10 @@ if [ $# -gt 0 ]; then
     check_service_is_up
     shift 1
     docker-compose exec "$APP_SERVICE" php "$@"
+    elif [ "$1" == "assist" ]; then
+    check_service_is_up
+    shift 1
+    docker-compose exec "$APP_SERVICE" php ./core/Console/Assistant.php "$@"
   elif [ "$1" == "composer" ]; then
     check_service_is_up
     shift 1
