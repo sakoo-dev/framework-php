@@ -19,5 +19,9 @@ stylefix:
 test:
 	@./sakoo test
 
+test-coverage:
+	@./sakoo test --coverage-html=storage/tests/coverage/
+	@open ./storage/tests/coverage/index.html
+
 fresh:
 	@./sakoo composer dump-autoload
