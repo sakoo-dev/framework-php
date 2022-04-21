@@ -25,3 +25,6 @@ test-coverage:
 
 fresh:
 	@./sakoo composer dump-autoload
+
+watch:
+	@./sakoo assist watch

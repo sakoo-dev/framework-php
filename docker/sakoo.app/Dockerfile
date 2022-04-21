@@ -4,6 +4,9 @@ LABEL MAINTAINER="Pouya Asgharnejad Tehran | https://sakoo.dev"
 RUN apt-get update
 RUN apt-get upgrade -y
 
+RUN pecl install inotify
+RUN docker-php-ext-enable inotify
+
 RUN pecl install xdebug
 RUN docker-php-ext-enable xdebug
 
