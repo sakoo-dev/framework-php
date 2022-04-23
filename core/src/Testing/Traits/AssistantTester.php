@@ -3,6 +3,7 @@
 namespace Core\Testing\Traits;
 
 use Core\Console\Assistant;
+use Core\Path\Path;
 use Symfony\Component\Console\Tester\ApplicationTester;
 
 trait AssistantTester
@@ -18,6 +19,6 @@ trait AssistantTester
 
 	private function getAssistantApp(): Assistant
 	{
-		return require __DIR__ . '/../../../../apps/console/Bootstrap.php';
+		return require Path::getAppsDir() . '/console/Bootstrap.php';
 	}
 }

@@ -3,6 +3,7 @@
 namespace Core\Kernel;
 
 use Core\Container\Container;
+use Core\Path\Path;
 
 class Kernel
 {
@@ -14,7 +15,7 @@ class Kernel
 		$this->startTime = microtime(true);
 		$this->setGlobalKernel();
 
-		require_once __DIR__ . '/../../helpers.php';
+		require_once Path::getCoreDir() . '/helpers.php';
 		$this->container = new Container();
 	}
 

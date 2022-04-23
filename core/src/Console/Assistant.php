@@ -3,6 +3,7 @@
 namespace Core\Console;
 
 use Core\Constants;
+use Core\Path\Path;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Finder\Finder;
 
@@ -26,7 +27,7 @@ class Assistant
 
 	private function getDefaultCommandsDir(): string
 	{
-		return __DIR__ . '/Commands';
+		return Path::getCoreDir() . '/src/Console/Commands';
 	}
 
 	private function getDefaultCommandsNamespace(): string

@@ -1,5 +1,6 @@
 <?php
 
+use Core\Path\Path;
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
@@ -30,11 +31,9 @@ $rules = [
 	],
 ];
 
-$finder = Finder::create()
-	->in(__DIR__);
 
 return (new Config())
 	->setRules($rules)
-	->setFinder($finder)
+	->setFinder(Path::getProjectPHPFiles())
 	->setIndent("\t")
 	->setLineEnding("\r\n");
