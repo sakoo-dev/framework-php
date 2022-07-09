@@ -2,7 +2,6 @@
 
 use Core\Path\Path;
 use PhpCsFixer\Config;
-use PhpCsFixer\Finder;
 
 $rules = [
 	'@PhpCsFixer' => true,
@@ -30,7 +29,6 @@ $rules = [
 		],
 	],
 ];
-
 
 return (new Config())
 	->setRules($rules)
