@@ -1,7 +1,7 @@
-version: '3.8'
 services:
+
   mysql:
-    image: mariadb:latest
+    image: mysql:latest
     restart: unless-stopped
     ports:
       - '${DB_PORT:-3306}:3306'
@@ -17,6 +17,7 @@ services:
       - localnetwork
     healthcheck:
       test: ["CMD", "mysqladmin", "ping"]
+
   sakoo.app:
     build:
       context: .
@@ -31,6 +32,7 @@ services:
       - mysql
     networks:
       - localnetwork
+
   nginx:
     image: nginx:latest
     restart: unless-stopped
@@ -47,9 +49,11 @@ services:
       - localnetwork
     healthcheck:
       test: ["CMD", "service", "nginx", "status"]
+
 volumes:
   mysqldata:
     driver: local
+
 networks:
   localnetwork:
     driver: bridge
