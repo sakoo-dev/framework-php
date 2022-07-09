@@ -6,3 +6,4 @@ docker/nginx/logs/*
 .php-cs-fixer.cache
 .phpunit.result.cache
 storage/
+.DS_Store

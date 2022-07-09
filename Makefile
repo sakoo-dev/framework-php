@@ -2,7 +2,7 @@ init:
 	@cp .env.example .env
 	@chmod +x ./sakoo
 	@./sakoo up -d --build
-	@./sakoo composer install --ignore-platform-reqs
+	@./sakoo composer install
 
 up:
 	@./sakoo up -d
