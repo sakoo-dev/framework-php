@@ -1,9 +1,12 @@
 <?php
 
-use Core\Console\Assistant;
-use Core\Console\Commands\ZenCommand;
+use Apps\Console\Commands\TestCommand;
+use Sakoo\Framework\Core\Console\Assistant;
+use Sakoo\Framework\Core\Console\Commands\ZenCommand;
 
-$commands = [];
+$commands = [
+	resolve(TestCommand::class),
+];
 
 /** @var Assistant $assistant */
 $assistant = resolve(Assistant::class);

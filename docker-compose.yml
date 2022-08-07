@@ -1,7 +1,7 @@
-version: '3.8'
 services:
+
   mysql:
-    image: mariadb:latest
+    image: mysql:latest
     restart: unless-stopped
     ports:
       - '${DB_PORT:-3306}:3306'
@@ -17,10 +17,11 @@ services:
       - localnetwork
     healthcheck:
       test: ["CMD", "mysqladmin", "ping"]
+
   sakoo.app:
     build:
       context: .
-      dockerfile: docker/sakoo.app/Dockerfile
+      dockerfile: vendor/sakoo/framework-core/docker/sakoo.app/Dockerfile
     image: sakoo.app:1.0.0
     restart: unless-stopped
     extra_hosts:
@@ -31,6 +32,7 @@ services:
       - mysql
     networks:
       - localnetwork
+
   nginx:
     image: nginx:latest
     restart: unless-stopped
@@ -39,17 +41,19 @@ services:
       - '${APP_PORT_SECURE:-443}:443'
     volumes:
       - ./:/var/www/html/
-      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
-      - ./docker/nginx/logs/:/var/log/nginx/
+      - ./storage/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./storage/nginx/logs/:/var/log/nginx/
     depends_on:
       - sakoo.app
     networks:
       - localnetwork
     healthcheck:
       test: ["CMD", "service", "nginx", "status"]
+
 volumes:
   mysqldata:
     driver: local
+
 networks:
   localnetwork:
     driver: bridge

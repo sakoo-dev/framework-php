@@ -5,12 +5,12 @@
          colors="true">
   <coverage>
     <include>
-      <directory suffix=".php">core/src</directory>
+      <directory suffix=".php">./apps</directory>
     </include>
   </coverage>
   <testsuites>
-    <testsuite name="Core">
-      <directory>core/tests</directory>
+    <testsuite name="Apps Tests">
+      <directory>./apps/*/Tests</directory>
     </testsuite>
   </testsuites>
 </phpunit>

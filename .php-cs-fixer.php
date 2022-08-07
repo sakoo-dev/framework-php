@@ -1,8 +1,9 @@
 <?php
 
-use Core\Path\Path;
 use PhpCsFixer\Config;
-use PhpCsFixer\Finder;
+use System\Path\Path;
+
+require_once __DIR__ . '/vendor/autoload.php';
 
 $rules = [
 	'@PhpCsFixer' => true,
@@ -12,7 +13,7 @@ $rules = [
 	'concat_space' => ['spacing' => 'one'],
 	'ordered_class_elements' => false,
 	'php_unit_method_casing' => ['case' => 'snake_case'],
-  'explicit_string_variable' => false,
+	'explicit_string_variable' => false,
 	'blank_line_before_statement' => [
 		'statements' => [
 			'continue',
@@ -30,7 +31,6 @@ $rules = [
 		],
 	],
 ];
-
 
 return (new Config())
 	->setRules($rules)

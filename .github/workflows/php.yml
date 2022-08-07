@@ -2,9 +2,16 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - '**'
+
   pull_request:
-    branches: [ main ]
+    branches:
+      - '**'
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -16,7 +23,7 @@ jobs:
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
-    - name: Cache Composer packages
+    - name: Cache composer packages
       id: composer-cache
       uses: actions/cache@v2
       with:
@@ -31,5 +38,10 @@ jobs:
     - name: Code style check
       run: composer stylecheck
 
-    - name: Run tests
-      run: composer test
+    - name: Build docker image
+      run: |
+        docker build . -f ./vendor/sakoo/framework-core/docker/sakoo.app/Dockerfile -t sakoo.app -q
+
+    - name: Run automated tests
+      run: |
+        docker run -v /home/runner/work/framework-php/framework-php:/var/www/html/ sakoo.app composer test

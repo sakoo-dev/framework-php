@@ -1,8 +1,8 @@
 <?php
 
-use Core\Kernel\Environment;
-use Core\Kernel\Kernel;
-use Core\Path\Path;
+use Sakoo\Framework\Core\Kernel\Environment;
+use Sakoo\Framework\Core\Kernel\Kernel;
+use System\Path\Path;
 
 require_once getcwd() . '/vendor/autoload.php';
 Kernel::run(Environment::Console);

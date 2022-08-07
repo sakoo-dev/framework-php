@@ -1,8 +1,8 @@
 .idea/
 .vscode/
 .env
-docker/nginx/logs/*
 /vendor/
 .php-cs-fixer.cache
 .phpunit.result.cache
 storage/
+.DS_Store
