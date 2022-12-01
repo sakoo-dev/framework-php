@@ -40,7 +40,7 @@ services:
       - '${APP_PORT_SECURE:-443}:443'
     volumes:
       - ./:/var/www/html/
-      - ./storage/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
       - ./storage/nginx/logs/:/var/log/nginx/
     depends_on:
       - sakoo.app
