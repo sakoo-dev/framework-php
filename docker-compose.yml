@@ -4,15 +4,14 @@ services:
     image: mysql:latest
     restart: unless-stopped
     ports:
-      - '${DB_PORT:-3306}:3306'
+      - '${MYSQL_PORT:-3306}:3306'
     volumes:
       - mysqldata:/var/lib/mysql
     environment:
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     networks:
       - localnetwork
     healthcheck:

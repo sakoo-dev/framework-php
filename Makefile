@@ -2,7 +2,6 @@ init:
 	@cp .env.example .env
 	@docker run --rm -it -v ${PWD}:/app composer:latest install
 	@chmod +x ./vendor/sakoo/framework-core/bin/sakoo
-	@ln -s ./vendor/sakoo/framework-core/bin/sakoo sakoo
 	@./sakoo up -d --build
 
 up:
