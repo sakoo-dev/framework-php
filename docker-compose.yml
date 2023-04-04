@@ -1,7 +1,7 @@
 services:
 
   mysql:
-    image: mysql:latest
+    image: mysql:8.0.32
     restart: unless-stopped
     ports:
       - '${MYSQL_PORT:-3306}:3306'
@@ -10,10 +10,10 @@ services:
     environment:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     networks:
-      - localnetwork
+      - sakoo
     healthcheck:
       test: ["CMD", "mysqladmin", "ping"]
 
@@ -30,10 +30,10 @@ services:
     depends_on:
       - mysql
     networks:
-      - localnetwork
+      - sakoo
 
   nginx:
-    image: nginx:latest
+    image: nginx:1.23.4-alpine
     restart: unless-stopped
     ports:
       - '${APP_PORT:-80}:80'
@@ -45,7 +45,7 @@ services:
     depends_on:
       - sakoo.app
     networks:
-      - localnetwork
+      - sakoo
     healthcheck:
       test: ["CMD", "service", "nginx", "status"]
 
@@ -54,5 +54,5 @@ volumes:
     driver: local
 
 networks:
-  localnetwork:
+  sakoo:
     driver: bridge
