@@ -19,10 +19,10 @@ trait RunKernel
 		$loaders = require_once Path::getSystemDir() . '/ServiceLoader/Loaders.php';
 		$timeZone = Env::get('SERVER_TIME_ZONE', 'Asia/Tehran');
 
-		Kernel::prepare(Mode::Test, Environment::Production)
+		Kernel::prepare(Mode::Test, Environment::Debug)
+			->setServiceLoaders($loaders)
 			->setErrorHandler(new ErrorHandler())
 			->setExceptionHandler(new ExceptionHandler())
-			->setServiceLoaders($loaders)
 			->setServerTimezone($timeZone)
 			->run();
 	}
